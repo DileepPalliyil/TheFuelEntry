@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--Donot remove focus thief-->
+    <View
+        android:id="@+id/focus_thief"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/regnoLayout" >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fleetCreate"
+        android:maxLength="10"
+        android:textStyle="bold"
+        android:inputType="text"
+        android:hint="@string/enterRegno"
+        android:gravity="top"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fleetCreate"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/fleetList"
+        android:background="@color/gray"
+        android:layout_alignParentTop="true"
+        android:drawSelectorOnTop="false" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/fuelInvLayout"
+        android:layout_below="@id/regnoLayout">
+
+       <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fillAmtQty"
+            android:id="@+id/invLabel"
+            android:textStyle="bold"
+            android:gravity="top"/>
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:inputType="numberDecimal"
+            android:maxLength="6"
+            android:layout_weight="1"
+            android:id="@+id/invAmount"
+            android:gravity="top"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:hint="@string/InvoiceQty"
+            android:inputType="none"
+            android:layout_weight="1"
+            android:id="@+id/invQty"
+            android:gravity="top"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/ckmLayout"
+        android:layout_below="@id/fuelInvLayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ckm"
+        android:textStyle="bold"
+        android:id="@+id/ckmLabel"
+        android:gravity="top"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radiogfprice"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:inputType="number"
+        android:maxLength="6"
+        android:id="@+id/ckm"
+        android:gravity="top"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/filldateLayout"
+        android:layout_below="@id/ckmLayout"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radiogfprice"
+        android:text="@string/fillDate"
+        android:id="@+id/filldateLabel"
+        android:textStyle="bold"
+        android:gravity="top"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ckmLayout"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:inputType="date"
+        android:hint="@string/dateFilling"
+        android:id="@+id/fillDate"
+        android:gravity="top"/>
+    </LinearLayout>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinStation"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/filldateLayout"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/fuelPriceLayout"
+        android:layout_below="@id/spinStation"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:id="@+id/fRegularPrice"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+       android:id="@+id/fPremiumPrice"/>
+   </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radiogfprice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/fuelPriceLayout">
+
+      <RadioButton
+        android:id="@+id/radioReular"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="@string/radio_regular"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:checked="true" />
+
+       <RadioButton
+         android:id="@+id/radioPremium"
+         android:layout_height="wrap_content"
+         android:layout_width="0dp"
+         android:layout_weight="1"
+         android:layout_marginRight="@dimen/activity_horizontal_margin"
+         android:text="@string/radio_premium"
+         android:checked="false"  />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/invoiceLayout"
+        android:layout_below="@id/radiogfprice"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enterInvoiceNo"
+        android:inputType="number"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:id="@+id/fleetInvoice"
+        android:gravity="top"/>
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:id="@+id/invoiceView"
+        android:layout_centerHorizontal="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/createBtnLayout"
+        android:layout_below="@id/invoiceLayout"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/AddImage"
+            android:textColor="@color/white"
+            android:id="@+id/btn_start"
+            android:layout_weight="1"
+            android:background="@color/dark_green"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saveFilling"
+            android:textColor="@color/white"
+            android:id="@+id/btn_saveFilling"
+            android:layout_weight="1"
+            android:layout_marginLeft="2dp"
+            android:background="@color/dark_green"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+

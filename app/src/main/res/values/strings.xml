@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">TheFuelEntry</string>
+    <string name="permissions_not_granted_read_phone_state">All permissions not granted.</string>
+    <string name="action_settings">Setting</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="refresh_db">Refresh All</string>
+    <string name="srch">Search</string>
+    <string name="enterInvoiceNo">Enter Invoice No</string>
+    <string name="enterRegno">Enter Registration No</string>
+    <string name="saveFilling">Save Filling</string>
+    <string name="AddImage">Add Image</string>
+    <string name="radio_regular">SelectRegular</string>
+    <string name="radio_premium">Select Premium</string>
+    <string name="enterInvoiceAmt">Enter Invoice amount</string>
+
+    <string name="ckm">Ckm:</string>
+    <string name="InvoiceQty">Quantity</string>
+    <string name="dateFilling">Date of filling</string>
+    <string name="fillDate">Filled Date</string>
+    <string name="fillAmtQty">InvAmount(Rs)/Qty(L):</string>
+
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+
+    </style>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <string name="title_activity_saved">SavedActivity</string>
+
+</resources>
